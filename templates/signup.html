@@ -1,0 +1,37 @@
+{% extends "base.html"%}
+
+{% block content %}
+
+<h3>Sign up here:</h3>
+<p>
+    <form action="/validate" method="post">
+    <label>
+        Username:
+        <input type="text" name="user_name"/>
+    </label>
+    <br>
+    <label>
+        Password:
+        <input type="password" name="pass"/>
+    </label>
+    <br>
+    <label>
+        confirm password:
+        <input type="password" name="pass_c"/>
+    </label>
+    <br>
+    <label>
+        E-mail (optional):
+        <input type="text" name="e_mail"/>
+    </label>
+    <br>
+        must include: Ab6&
+   
+    <input type="submit" value="Sign Up"/>
+    </form>
+</p> 
+
+{% if error %}
+  <p class='error'>{{ error }}</p>
+{% endif %}
+{% endblock %}
