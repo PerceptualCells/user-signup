@@ -2,36 +2,36 @@
 
 {% block content %}
 
+
 <h3>Sign up here:</h3>
 <p>
     <form action="/validate" method="post">
     <label>
-        Username:
-        <input type="text" name="user_name"/>
+        Username:(between 3 & 20 characters)<br>
+        <input type="text" name="user_name" value="{{ user_name }}"/>{% if usr_error %}<p id="error" class='error'>{{ usr_error }}</p>{% endif %}
     </label>
-    <br>
     <label>
-        Password:
-        <input type="password" name="pass"/>
+        Password:<br>
+        <input type="password" name="pass"/>{% if p_error %}<p id="error" class='error'>{{ p_error }}</p>{% endif %}
     </label>
-    <br>
     <label>
-        confirm password:
-        <input type="password" name="pass_c"/>
+        confirm password:<br>
+        <input type="password" name="pass_c"/>{% if p2_error %}<p id="error" class='error'>{{ p2_error }}</p>{% endif %}
     </label>
-    <br>
     <label>
-        E-mail (optional):
-        <input type="text" name="e_mail"/>
+        E-mail (optional):<br>
+        <input type="text" name="e_mail" value="{{ email }}"/>{% if e_error %}<p id="error" class='error'>{{ e_error }}</p>{% endif %}
     </label>
     <br>
-        must include: Ab6&
+        Passwords must be alphanumeric, no spaces or special characters
+    <br>
+
    
     <input type="submit" value="Sign Up"/>
     </form>
 </p> 
 
 {% if error %}
-  <p class='error'>{{ error }}</p>
+  <p id="error" class='error'>{{ error }}</p>
 {% endif %}
 {% endblock %}
