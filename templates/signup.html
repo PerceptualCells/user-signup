@@ -7,31 +7,31 @@
 <p>
     <form action="/validate" method="post">
     <label>
-        Username:(between 3 & 20 characters)<br>
-        <input type="text" name="user_name" value="{{ user_name }}"/>{% if usr_error %}<p id="error" class='error'>{{ usr_error }}</p>{% endif %}
+        Username:
+        <div><input type="text" name="user_name" value="{{ user_name }}"/><p id="error" class='error'>{% if usr_error %}{{ usr_error }}{% endif %}</p></div>
+    <label>
+        Password:
+        <div><input type="password" name="pass"/><p id="error" class='error'>{% if p_error %}{{ p_error }}{% endif %}</p></div>
     </label>
     <label>
-        Password:<br>
-        <input type="password" name="pass"/>{% if p_error %}<p id="error" class='error'>{{ p_error }}</p>{% endif %}
+        confirm password:
+        <div><input type="password" name="pass_c"/><p id="error" class='error'>{% if p2_error %}{{ p2_error }}{% endif %}</p></div>
     </label>
     <label>
-        confirm password:<br>
-        <input type="password" name="pass_c"/>{% if p2_error %}<p id="error" class='error'>{{ p2_error }}</p>{% endif %}
+        E-mail (optional):
+        <div><input type="text" name="e_mail" value="{{ email }}"/><p id="error" class='error'>{% if e_error %}{{ e_error }}{% endif %}</p></div>
     </label>
-    <label>
-        E-mail (optional):<br>
-        <input type="text" name="e_mail" value="{{ email }}"/>{% if e_error %}<p id="error" class='error'>{{ e_error }}</p>{% endif %}
-    </label>
-    <br>
-        Passwords must be alphanumeric, no spaces or special characters
-    <br>
+    <ul>
+        <li>Passwords must be alphanumeric, no spaces or special characters</li>
+            <li>between 3 and 20 characters long</li>
+        <li>Username must be alphanumeric, containing no spaces or special characters</li>
+            <li>between 3 and 20 characters long</li>
+    </ul>
 
    
     <input type="submit" value="Sign Up"/>
     </form>
 </p> 
 
-{% if error %}
-  <p id="error" class='error'>{{ error }}</p>
-{% endif %}
+
 {% endblock %}

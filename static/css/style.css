@@ -31,6 +31,9 @@
 #error {
     font-family: red;
 }
+p.error {
+    font-family: red;
+}
 .container {
     position: relative;
     width: 100%;
@@ -123,15 +126,14 @@
   are based on 10px sizing. So basically 1.5rem = 15px :) */
   html {
     font-size: 62.5%;
-    background-color: rgb(16, 64, 209); 
-  }
+   }
   body {
     font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
     line-height: 1.6;
     font-weight: 400;
     font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #222;
-    background-color: rgb(16, 64, 209);
+    background-color: rgb(179, 199, 200);
    }
   
   
@@ -229,8 +231,8 @@
     background-color: #1EAEDB;
     border-color: #1EAEDB; }
   
-  
-  /* Forms
+ /* 
+ Forms
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
   input[type="email"],
   input[type="number"],
@@ -248,7 +250,7 @@
     border-radius: 4px;
     box-shadow: none;
     box-sizing: border-box; }
-  /* Removes awkward default styles on some inputs for iOS */
+  /*Removes awkward default styles on some inputs for iOS*/
   input[type="email"],
   input[type="number"],
   input[type="search"],
@@ -292,7 +294,7 @@
     font-weight: normal; }
   
   
-  /* Lists
+  /*Lists
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
   ul {
     list-style: circle inside; }
